@@ -47,28 +47,27 @@ En este proyecto, he creado varios **tests** utilizando **Gherkin**, los cuales 
         And user whit first name "George" and last name "Bluth" should be correct
 
 3. **Feature: List all users information**
-Este escenario prueba la consulta de todos los usuarios de la API.
-```gherkin
-Feature: list all users information
-  I as a app need to list all users because i need show your information
+   Este escenario prueba la consulta de todos los usuarios de la API.
+   ```gherkin
+   Feature: list all users information
+   I as a app need to list all users because i need show your information
 
-  Scenario: list all users
+   Scenario: list all users
     When he list all users
     Then response status code is 200
     And all 6 the expected users should be returned
 
 
 4. **Feature: Listar usuarios en la página 2**
-Este escenario prueba la paginación de la consulta de usuarios en la página 2.
+   Este escenario prueba la paginación de la consulta de usuarios en la página 2.
 
-gherkin
-Copiar código
-Feature: Listar usuarios
-  Como usuario del servicio ReqRes
-  Quiero listar usuarios en la página 2
-  Para obtener información sobre ellos.
+   ```gherkin
+   Feature: Listar usuarios
+   Como usuario del servicio ReqRes
+   Quiero listar usuarios en la página 2
+   Para obtener información sobre ellos.
 
-  Scenario: Listar usuarios en la página 2
+   Scenario: Listar usuarios en la página 2
     Given que accedo al servicio de listar usuarios de ReqRes
     When realizo una solicitud GET al endpoint "/api/users?page=2"
     Then la respuesta debe contener la lista de usuarios en la pagina 2
@@ -76,13 +75,10 @@ Feature: Listar usuarios
 
 
 5. **Feature: Actualizar un usuario existente**
-Este escenario prueba la actualización de los datos de un usuario con un ID específico.
-
-gherkin
-Copiar código
-Feature: Actualizar un usuario existente
-
-  Scenario: Actualizar usuario con ID 2
+   Este escenario prueba la actualización de los datos de un usuario con un ID específico.
+   ```gherkin
+   Feature: Actualizar un usuario existente
+    Scenario: Actualizar usuario con ID 2
     Given que tengo un ID de usuario existente 2
     When realizo una solicitud PUT al endpoint "/api/users/2" con datos actualizados
     Then la respuesta debe indicar que el usuario fue actualizado exitosamente con un estado de 200
