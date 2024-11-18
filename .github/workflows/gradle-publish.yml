@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'temurin'  # Usando la distribución 'temurin'
+          distribution: 'temurin'
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v2
@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Ensure gradlew has execute permissions
-        run: chmod +x ./gradlew  # Esto asegura que gradlew tenga permisos de ejecución
+        run: chmod +x ./gradlew  # Asegura que gradlew tenga permisos de ejecución
 
       - name: Build with Gradle
         run: ./gradlew build
@@ -42,16 +42,16 @@ jobs:
         run: ./gradlew clean test
 
       - name: List build directory contents
-        run: ls -R ./build  # Para verificar si el reporte se genera correctamente
+        run: ls -R ./build  # Verifica si el reporte se genera correctamente
 
       - name: Upload Serenity Report to GitHub Pages
         if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_PAT }}  # Usar el PAT en lugar de GITHUB_TOKEN
+          github_token: ${{ secrets.GH_PAT }}  # Usa el PAT con permisos adecuados
           publish_dir: ./build/serenity-report
 
-      # Solucionando el problema de 'git push' a gh-pages
+      # Configuración de Git para el push a gh-pages
       - name: Set up Git for push to gh-pages
         run: |
           git config user.name "GitHub Actions"
