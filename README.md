@@ -38,14 +38,13 @@ En este proyecto, he creado varios **tests** utilizando **Gherkin**, los cuales 
 2. **Feature: Find a user information** 
     Este escenario prueba la búsqueda de un usuario con un ID válido.
      ```gherkin
+     Feature: find a user information
+        I as a app need to find a user with your ID because i need show your information
 
-    Feature: find a user information
-  I as a app need to find a user with your ID because i need show your information
-
-  Scenario: find a user valid
-    When he find a user with id 1
-    Then response status code is 200
-    And user whit first name "George" and last name "Bluth" should be correct
+     Scenario: find a user valid
+        When he find a user with id 1
+        Then response status code is 200
+        And user whit first name "George" and last name "Bluth" should be correct
 
 3. **Feature: List all users information**
 Este escenario prueba la consulta de todos los usuarios de la API.
