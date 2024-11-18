@@ -96,7 +96,7 @@ Clona este repositorio:
 
 bash
 Copiar código
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone https://github.com/Medwin138/serenityBDD-Rest-Screenplay-Api.git
 Navega al directorio del proyecto:
 
 bash
