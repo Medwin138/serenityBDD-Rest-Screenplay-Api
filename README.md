@@ -48,7 +48,7 @@ En este proyecto, he creado varios **tests** utilizando **Gherkin**, los cuales 
 
 3. **Feature: List all users information**
 Este escenario prueba la consulta de todos los usuarios de la API.
-
+```gherkin
 Feature: list all users information
   I as a app need to list all users because i need show your information
 
@@ -56,6 +56,7 @@ Feature: list all users information
     When he list all users
     Then response status code is 200
     And all 6 the expected users should be returned
+
 
 4. **Feature: Listar usuarios en la página 2**
 Este escenario prueba la paginación de la consulta de usuarios en la página 2.
