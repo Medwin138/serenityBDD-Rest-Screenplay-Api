@@ -41,8 +41,19 @@ jobs:
       - name: Run Serenity BDD Tests
         run: ./gradlew clean test
 
+      # Verifica el contenido del directorio de build para asegurarse de que el reporte exista
       - name: List build directory contents
         run: ls -R ./build  # Verifica si el reporte se genera correctamente
+
+      - name: Check for Serenity Report
+        run: |
+          if [ -d "./build/serenity-report" ]; then
+            echo "Serenity report exists!"
+            ls ./build/serenity-report
+          else
+            echo "Serenity report not found!"
+            exit 1
+          fi
 
       - name: Upload Serenity Report to GitHub Pages
         if: success()
