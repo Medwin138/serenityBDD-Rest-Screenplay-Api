@@ -32,6 +32,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      - name: Ensure gradlew has execute permissions
+        run: chmod +x ./gradlew  # Esto asegura que gradlew tenga permisos de ejecución
+
       - name: Build with Gradle
         run: ./gradlew build
 
